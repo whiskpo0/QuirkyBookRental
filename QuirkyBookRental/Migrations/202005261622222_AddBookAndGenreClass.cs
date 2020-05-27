@@ -18,7 +18,7 @@ namespace QuirkyBookRental.Migrations
                         Description = c.String(nullable: false),
                         ImageUrl = c.String(nullable: false),
                         Avaibility = c.Int(nullable: false),
-                        Prive = c.Double(nullable: false),
+                        Price = c.Double(nullable: false),
                         DateAdded = c.DateTime(),
                         GenreId = c.Int(nullable: false),
                         PublicationDate = c.DateTime(nullable: false),

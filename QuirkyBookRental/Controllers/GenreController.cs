@@ -21,7 +21,7 @@ namespace QuirkyBookRental.Controllers
         // GET: Genre
         public ActionResult Index()
         {
-            return View(db.Genre.ToList());
+            return View(db.Genres.ToList());
         }
 
         public ActionResult Create()
@@ -35,7 +35,7 @@ namespace QuirkyBookRental.Controllers
         {
             if(ModelState.IsValid)
             {
-                db.Genre.Add(genre);
+                db.Genres.Add(genre);
                 db.SaveChanges(); 
             }
             
@@ -50,7 +50,7 @@ namespace QuirkyBookRental.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest); 
             }
 
-            Genre genre = db.Genre.Find(id); 
+            Genre genre = db.Genres.Find(id); 
             if( genre == null)
             {
                 return HttpNotFound(); 
@@ -66,7 +66,7 @@ namespace QuirkyBookRental.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            Genre genre = db.Genre.Find(id);
+            Genre genre = db.Genres.Find(id);
             if (genre == null)
             {
                 return HttpNotFound();
@@ -100,7 +100,7 @@ namespace QuirkyBookRental.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            Genre genre = db.Genre.Find(id);
+            Genre genre = db.Genres.Find(id);
             if (genre == null)
             {
                 return HttpNotFound();
@@ -113,8 +113,8 @@ namespace QuirkyBookRental.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id)
         {
-            Genre genre = db.Genre.Find(id);
-            db.Genre.Remove(genre);
+            Genre genre = db.Genres.Find(id);
+            db.Genres.Remove(genre);
             db.SaveChanges();
             return RedirectToAction("Index");          
         }

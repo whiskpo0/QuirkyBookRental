@@ -169,6 +169,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BookController.cs" />
     <Compile Include="Controllers\GenreController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -179,6 +180,14 @@
     <Compile Include="Migrations\202005261622222_AddBookAndGenreClass.Designer.cs">
       <DependentUpon>202005261622222_AddBookAndGenreClass.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005262118389_updateBookModel.cs" />
+    <Compile Include="Migrations\202005262118389_updateBookModel.Designer.cs">
+      <DependentUpon>202005262118389_updateBookModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005271559548_AddPublisherToBookModel.cs" />
+    <Compile Include="Migrations\202005271559548_AddPublisherToBookModel.Designer.cs">
+      <DependentUpon>202005271559548_AddPublisherToBookModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Book.cs" />
@@ -188,10 +197,16 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModel\BookViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\fortune.PNG" />
+    <Content Include="Content\Images\GiantBook.PNG" />
+    <Content Include="Content\Images\jungle.PNG" />
+    <Content Include="Content\Images\Spider.PNG" />
+    <Content Include="Content\Images\Sunset.PNG" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -259,10 +274,14 @@
     <Content Include="Views\Shared\_EditButtonPartial.cshtml" />
     <Content Include="Views\Genre\Edit.cshtml" />
     <Content Include="Views\Genre\Delete.cshtml" />
+    <Content Include="Views\Book\Create.cshtml" />
+    <Content Include="Views\Book\Delete.cshtml" />
+    <Content Include="Views\Book\Details.cshtml" />
+    <Content Include="Views\Book\Edit.cshtml" />
+    <Content Include="Views\Book\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -274,6 +293,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202005261622222_AddBookAndGenreClass.resx">
       <DependentUpon>202005261622222_AddBookAndGenreClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005262118389_updateBookModel.resx">
+      <DependentUpon>202005262118389_updateBookModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005271559548_AddPublisherToBookModel.resx">
+      <DependentUpon>202005271559548_AddPublisherToBookModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

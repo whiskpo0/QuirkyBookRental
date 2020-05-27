@@ -33,7 +33,7 @@ namespace QuirkyBookRental.Models
 
         [Required]
         [DataType(DataType.Currency)]
-        public double Prive { get; set; }
+        public double Price { get; set; }
 
         [DisplayFormat(DataFormatString = "{0: MMM dd yyyy}")]
         public DateTime? DateAdded { get; set; }
@@ -53,5 +53,10 @@ namespace QuirkyBookRental.Models
 
         [Required]
         public string ProductDimensions { get; set; }
+
+        [Required]
+        public string Publisher { get; set; }
+
+        
     }
 }
